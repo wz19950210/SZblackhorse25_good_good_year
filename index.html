@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet/less" href="./less/index.less">
+    <!--<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css"/>-->
+    <link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+    <script src="./lib/less/less.js"></script>
+    <script src="lib/iscroll/iscroll.js"></script>
+</head>
+
+<body>
+    <div id="layout">
+        <div id="header">
+            <div class="list-bar">
+                <div class="icon">
+                    <span>——</span>
+                    <span>——</span>
+                    <span>——</span>
+                </div>
+               
+                <ul class="nav">
+                    <li>
+                        <a href="series.html">
+                            <p>连载动漫</p>
+                            <i>></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="special_list.html">
+                            <p>专题列表</p>
+                            <i>></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="title">
+                <h2>红旅动漫</h2>
+            </div>
+            <div class="search">
+                <a href="#">
+                    <i class="icon">搜索</i>
+                    
+                </a>
+            </div>
+        </div>
+        <div id="slide">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div id="main">
+            <div class="tab">
+                <div class="title clearfix">
+                    <a href="#" class="active">
+                        <h4>新增连载</h4>
+                    </a>
+                    <a href="#">
+                        <h4>新增完结</h4>
+                    </a>
+                    <a href="#">
+                        <h4>推荐连载</h4>
+                    </a>
+                    <a href="#">
+                        <h4>推荐完结</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="content">
+                <ul class="list">
+                    <li>
+                        <a href="">
+                            <img src="" alt="">
+                            <span></span>
+                            <p></p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="lib/swiper/js/swiper.jquery.min.js"></script>
+    <script src="./lib/template/template.js"></script>
+    <script src="./js/tools.js"></script>
+    <script src="./js/index.js"></script>
+    <script type="text/html" id="temp">
+        {{if $data[0].type}}
+        <ul class="list clearfix">
+            {{each}}
+            <li>
+                <a href="{{$value.url}}">
+                    <img src="{{$value.img}}" alt="">
+                    <span>{{$value.update}}</span>
+                    <p>{{$value.name}}</p>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        {{else}} {{each }}
+        <div class="swiper-slide">
+            <a href="{{$value.url}}">
+                <img src="{{$value.img}}" alt="">
+                <p>{{$value.title}}</p>
+            </a>
+        </div>
+        {{/each}} {{/if}}
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>

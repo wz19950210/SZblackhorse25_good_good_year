@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet/less" href="./less/series.less">
+    <link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="index.html">
+                <i>&lt;</i>
+            </a>
+            <h2>连载动漫</h2>
+        </div>
+        <div id="main">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="lib/swiper/js/swiper.jquery.min.js"></script>
+    <script src="./lib/template/template.js"></script>
+    <!--<script src="./js/tools.js"></script>-->
+    <script src="./js/series.js"></script>
+    <script type="text/html" id="temp">
+            {{each}}
+            <ul class="list clearfix">
+            <li>
+                <a href="{{$value.url}}" class="clearfix">
+                    <img src="{{$value.img}}" alt="">
+                    <div class="text">
+                        <p>{{$value.name}}</p>
+                        <span>{{$value.episode}}</span>
+                        <span>{{$value.updateTime}}</span>
+                        <span>下载次数：{{$value.downloadCount}}</span>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+</body>
+
+</html>
